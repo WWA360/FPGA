@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="ultra_top">
+		<CBX_INST_ENTRY INSTANCE_NAME="|ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_l4h.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[2]" CBX_FILE_NAME="add_sub_l4h.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_g4h.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_o4h.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]" CBX_FILE_NAME="add_sub_l4h.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[3]" CBX_FILE_NAME="add_sub_l4h.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[1]" CBX_FILE_NAME="add_sub_g4h.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

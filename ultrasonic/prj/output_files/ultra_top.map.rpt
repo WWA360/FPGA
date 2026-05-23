@@ -1,0 +1,532 @@
+Analysis & Synthesis report for ultra_top
+Fri May 22 16:56:16 2026
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |ultra_top|ultrasonic:ultrasonic_inst|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |ultra_top
+ 13. Parameter Settings for User Entity Instance: ultrasonic:ultrasonic_inst
+ 14. Parameter Settings for User Entity Instance: tube_dive:tube_dive_inst
+ 15. Parameter Settings for User Entity Instance: tone_index:tone_index_inst
+ 16. Parameter Settings for Inferred Entity Instance: ultrasonic:ultrasonic_inst|lpm_mult:Mult0
+ 17. lpm_mult Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "ultrasonic:ultrasonic_inst"
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++-----------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Fri May 22 16:56:16 2026            ;
+; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name               ; ultra_top                                        ;
+; Top-level Entity Name       ; ultra_top                                        ;
+; Family                      ; Cyclone                                          ;
+; Total logic elements        ; 559                                              ;
+; Total pins                  ; 17                                               ;
+; Total virtual pins          ; 0                                                ;
+; Total memory bits           ; 0                                                ;
+; Total PLLs                  ; 0                                                ;
++-----------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP1C3T144C8        ;                    ;
+; Top-level entity name                                                      ; ultra_top          ; ultra_top          ;
+; Family name                                                                ; Cyclone            ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 10          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                              ;
++------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path   ; Used in Netlist ; File Type              ; File Name with Absolute Path                                              ; Library ;
++------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
+; ../rtl/bell/tone_index.v           ; yes             ; User Verilog HDL File  ; D:/fpga/fpga_projrct/ultrasonic/rtl/bell/tone_index.v                     ;         ;
+; ../rtl/ultrasonic/ultrasonic_div.v ; yes             ; User Verilog HDL File  ; D:/fpga/fpga_projrct/ultrasonic/rtl/ultrasonic/ultrasonic_div.v           ;         ;
+; ../rtl/ultrasonic/ultra_top.v      ; yes             ; User Verilog HDL File  ; D:/fpga/fpga_projrct/ultrasonic/rtl/ultrasonic/ultra_top.v                ;         ;
+; ../rtl/digi_tube/tube_dive.v       ; yes             ; User Verilog HDL File  ; D:/fpga/fpga_projrct/ultrasonic/rtl/digi_tube/tube_dive.v                 ;         ;
+; ../rtl/digi_tube/binary2bcd.v      ; yes             ; User Verilog HDL File  ; D:/fpga/fpga_projrct/ultrasonic/rtl/digi_tube/binary2bcd.v                ;         ;
+; lpm_mult.tdf                       ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; aglobal130.inc                     ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc          ;         ;
+; lpm_add_sub.inc                    ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                       ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                       ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                       ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; multcore.tdf                       ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/multcore.tdf            ;         ;
+; csa_add.inc                        ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/csa_add.inc             ;         ;
+; mpar_add.inc                       ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
+; muleabz.inc                        ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/muleabz.inc             ;         ;
+; mul_lfrg.inc                       ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
+; mul_boothc.inc                     ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
+; alt_ded_mult.inc                   ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
+; alt_ded_mult_y.inc                 ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
+; dffpipe.inc                        ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
+; mpar_add.tdf                       ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                    ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                        ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                       ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc            ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; addcore.tdf                        ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/addcore.tdf             ;         ;
+; a_csnbuffer.inc                    ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/a_csnbuffer.inc         ;         ;
+; a_csnbuffer.tdf                    ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/a_csnbuffer.tdf         ;         ;
+; altshift.tdf                       ; yes             ; Megafunction           ; e:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.tdf            ;         ;
++------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 559   ;
+;     -- Combinational with no register       ; 363   ;
+;     -- Register only                        ; 13    ;
+;     -- Combinational with a register        ; 183   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 202   ;
+;     -- 3 input functions                    ; 107   ;
+;     -- 2 input functions                    ; 226   ;
+;     -- 1 input functions                    ; 11    ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 309   ;
+;     -- arithmetic mode                      ; 250   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 159   ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 196   ;
+; Total logic cells in carry chains           ; 263   ;
+; I/O pins                                    ; 17    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 196   ;
+; Total fan-out                               ; 2021  ;
+; Average fan-out                             ; 3.51  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                      ;
++------------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                           ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                                                                          ; Library Name ;
++------------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |ultra_top                                           ; 559 (23)    ; 196          ; 0           ; 17   ; 0            ; 363 (19)     ; 13 (1)            ; 183 (3)          ; 263 (0)         ; 0 (0)      ; |ultra_top                                                                                                                                                                                   ; work         ;
+;    |binary2bcd:binary2bcd_inst|                      ; 63 (63)     ; 0            ; 0           ; 0    ; 0            ; 63 (63)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ultra_top|binary2bcd:binary2bcd_inst                                                                                                                                                        ; work         ;
+;    |tone_index:tone_index_inst|                      ; 108 (108)   ; 51           ; 0           ; 0    ; 0            ; 57 (57)      ; 0 (0)             ; 51 (51)          ; 59 (59)         ; 0 (0)      ; |ultra_top|tone_index:tone_index_inst                                                                                                                                                        ; work         ;
+;    |tube_dive:tube_dive_inst|                        ; 67 (67)     ; 27           ; 0           ; 0    ; 0            ; 40 (40)      ; 0 (0)             ; 27 (27)          ; 16 (16)         ; 0 (0)      ; |ultra_top|tube_dive:tube_dive_inst                                                                                                                                                          ; work         ;
+;    |ultrasonic:ultrasonic_inst|                      ; 298 (137)   ; 114          ; 0           ; 0    ; 0            ; 184 (23)     ; 12 (12)           ; 102 (102)        ; 188 (96)        ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst                                                                                                                                                        ; work         ;
+;       |lpm_mult:Mult0|                               ; 161 (0)     ; 0            ; 0           ; 0    ; 0            ; 161 (0)      ; 0 (0)             ; 0 (0)            ; 92 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0                                                                                                                                         ; work         ;
+;          |multcore:mult_core|                        ; 161 (69)    ; 0            ; 0           ; 0    ; 0            ; 161 (69)     ; 0 (0)             ; 0 (0)            ; 92 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core                                                                                                                      ; work         ;
+;             |mpar_add:padder|                        ; 92 (0)      ; 0            ; 0           ; 0    ; 0            ; 92 (0)       ; 0 (0)             ; 0 (0)            ; 92 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                                                      ; work         ;
+;                |lpm_add_sub:adder[0]|                ; 16 (0)      ; 0            ; 0           ; 0    ; 0            ; 16 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                                                 ; work         ;
+;                   |addcore:adder|                    ; 16 (0)      ; 0            ; 0           ; 0    ; 0            ; 16 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder                                                                   ; work         ;
+;                      |a_csnbuffer:result_node|       ; 16 (16)     ; 0            ; 0           ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 16 (16)         ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node                                           ; work         ;
+;                |lpm_add_sub:adder[1]|                ; 16 (0)      ; 0            ; 0           ; 0    ; 0            ; 16 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]                                                                                 ; work         ;
+;                   |addcore:adder|                    ; 16 (0)      ; 0            ; 0           ; 0    ; 0            ; 16 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder                                                                   ; work         ;
+;                      |a_csnbuffer:result_node|       ; 16 (16)     ; 0            ; 0           ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 16 (16)         ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node                                           ; work         ;
+;                |lpm_add_sub:adder[2]|                ; 12 (0)      ; 0            ; 0           ; 0    ; 0            ; 12 (0)       ; 0 (0)             ; 0 (0)            ; 12 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[2]                                                                                 ; work         ;
+;                   |addcore:adder|                    ; 12 (0)      ; 0            ; 0           ; 0    ; 0            ; 12 (0)       ; 0 (0)             ; 0 (0)            ; 12 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[2]|addcore:adder                                                                   ; work         ;
+;                      |a_csnbuffer:result_node|       ; 12 (12)     ; 0            ; 0           ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[2]|addcore:adder|a_csnbuffer:result_node                                           ; work         ;
+;                |lpm_add_sub:adder[3]|                ; 4 (0)       ; 0            ; 0           ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 4 (0)           ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[3]                                                                                 ; work         ;
+;                   |addcore:adder|                    ; 4 (0)       ; 0            ; 0           ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 4 (0)           ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[3]|addcore:adder                                                                   ; work         ;
+;                      |a_csnbuffer:result_node|       ; 4 (4)       ; 0            ; 0           ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 4 (4)           ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[3]|addcore:adder|a_csnbuffer:result_node                                           ; work         ;
+;                |mpar_add:sub_par_add|                ; 44 (0)      ; 0            ; 0           ; 0    ; 0            ; 44 (0)       ; 0 (0)             ; 0 (0)            ; 44 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                                                 ; work         ;
+;                   |lpm_add_sub:adder[0]|             ; 20 (0)      ; 0            ; 0           ; 0    ; 0            ; 20 (0)       ; 0 (0)             ; 0 (0)            ; 20 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                                                            ; work         ;
+;                      |addcore:adder|                 ; 20 (0)      ; 0            ; 0           ; 0    ; 0            ; 20 (0)       ; 0 (0)             ; 0 (0)            ; 20 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder                                              ; work         ;
+;                         |a_csnbuffer:result_node|    ; 20 (20)     ; 0            ; 0           ; 0    ; 0            ; 20 (20)      ; 0 (0)             ; 0 (0)            ; 20 (20)         ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node                      ; work         ;
+;                   |lpm_add_sub:adder[1]|             ; 8 (0)       ; 0            ; 0           ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 0 (0)            ; 8 (0)           ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[1]                                                            ; work         ;
+;                      |addcore:adder|                 ; 8 (0)       ; 0            ; 0           ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 0 (0)            ; 8 (0)           ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[1]|addcore:adder                                              ; work         ;
+;                         |a_csnbuffer:result_node|    ; 8 (8)       ; 0            ; 0           ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node                      ; work         ;
+;                   |mpar_add:sub_par_add|             ; 16 (0)      ; 0            ; 0           ; 0    ; 0            ; 16 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|mpar_add:sub_par_add                                                            ; work         ;
+;                      |lpm_add_sub:adder[0]|          ; 16 (0)      ; 0            ; 0           ; 0    ; 0            ; 16 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|mpar_add:sub_par_add|lpm_add_sub:adder[0]                                       ; work         ;
+;                         |addcore:adder|              ; 16 (0)      ; 0            ; 0           ; 0    ; 0            ; 16 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder                         ; work         ;
+;                            |a_csnbuffer:result_node| ; 16 (16)     ; 0            ; 0           ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 16 (16)         ; 0 (0)      ; |ultra_top|ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node ; work         ;
++------------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------+
+; State Machine - |ultra_top|ultrasonic:ultrasonic_inst|state                             ;
++--------------+--------------+--------------+--------------+--------------+--------------+
+; Name         ; state.S_ECHO ; state.S_WAIT ; state.S_TRIG ; state.S_IDLE ; state.S_DONE ;
++--------------+--------------+--------------+--------------+--------------+--------------+
+; state.S_IDLE ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; state.S_TRIG ; 0            ; 0            ; 1            ; 1            ; 0            ;
+; state.S_WAIT ; 0            ; 1            ; 0            ; 1            ; 0            ;
+; state.S_ECHO ; 1            ; 0            ; 0            ; 1            ; 0            ;
+; state.S_DONE ; 0            ; 0            ; 0            ; 1            ; 1            ;
++--------------+--------------+--------------+--------------+--------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                      ;
++---------------------------------------------------+-----------------------------------------------------+
+; Register name                                     ; Reason for Removal                                  ;
++---------------------------------------------------+-----------------------------------------------------+
+; tone_index:tone_index_inst|tone_cnt[17,23,25..31] ; Stuck at GND due to stuck port data_in              ;
+; tube_dive:tube_dive_inst|seg_out[7]               ; Stuck at VCC due to stuck port data_in              ;
+; tone_index[3]                                     ; Merged with tone_index[1]                           ;
+; tone_index:tone_index_inst|tone_cnt[19..22,24]    ; Merged with tone_index:tone_index_inst|tone_cnt[18] ;
+; ultrasonic:ultrasonic_inst|distance[13..15]       ; Merged with ultrasonic:ultrasonic_inst|distance[12] ;
+; ultrasonic:ultrasonic_inst|distance[12]           ; Stuck at GND due to stuck port data_in              ;
+; ultrasonic:ultrasonic_inst|state~2                ; Lost fanout                                         ;
+; ultrasonic:ultrasonic_inst|state~3                ; Lost fanout                                         ;
+; Total Number of Removed Registers = 22            ;                                                     ;
++---------------------------------------------------+-----------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 196   ;
+; Number of registers using Synchronous Clear  ; 159   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 48    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |ultra_top|ultrasonic:ultrasonic_inst|idle_cnt[15] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |ultra_top|ultrasonic:ultrasonic_inst|trig_cnt[12] ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |ultra_top|ultrasonic:ultrasonic_inst|distance[11] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |ultra_top|tube_dive:tube_dive_inst|bit_sel[0]     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |ultra_top|tube_dive:tube_dive_inst|cnt[2]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |ultra_top|tone_index:tone_index_inst|cnt[25]      ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |ultra_top|tone_index[0]                           ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |ultra_top|tone_index[4]                           ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |ultra_top|ultrasonic:ultrasonic_inst|echo_cnt[6]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ultra_top ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; LED_ON         ; 0     ; Signed Integer                                   ;
+; FRE_CLK        ; 50    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ultrasonic:ultrasonic_inst ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; FRE_CLK        ; 50    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: tube_dive:tube_dive_inst ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; LED_ON         ; 0     ; Signed Integer                               ;
+; CLK_FRE        ; 50    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: tone_index:tone_index_inst ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; CLK_FRE        ; 50    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ultrasonic:ultrasonic_inst|lpm_mult:Mult0 ;
++------------------------------------------------+----------+--------------------------------+
+; Parameter Name                                 ; Value    ; Type                           ;
++------------------------------------------------+----------+--------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                 ;
+; LPM_WIDTHA                                     ; 32       ; Untyped                        ;
+; LPM_WIDTHB                                     ; 12       ; Untyped                        ;
+; LPM_WIDTHP                                     ; 44       ; Untyped                        ;
+; LPM_WIDTHR                                     ; 44       ; Untyped                        ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                        ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                        ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                        ;
+; LATENCY                                        ; 0        ; Untyped                        ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                        ;
+; INPUT_B_IS_CONSTANT                            ; YES      ; Untyped                        ;
+; USE_EAB                                        ; OFF      ; Untyped                        ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                        ;
+; DEVICE_FAMILY                                  ; Cyclone  ; Untyped                        ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                        ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K            ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                        ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                        ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                        ;
+; CBXI_PARAMETER                                 ; NOTHING  ; Untyped                        ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                        ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                        ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                        ;
++------------------------------------------------+----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                    ;
++---------------------------------------+-------------------------------------------+
+; Name                                  ; Value                                     ;
++---------------------------------------+-------------------------------------------+
+; Number of entity instances            ; 1                                         ;
+; Entity Instance                       ; ultrasonic:ultrasonic_inst|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 32                                        ;
+;     -- LPM_WIDTHB                     ; 12                                        ;
+;     -- LPM_WIDTHP                     ; 44                                        ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                  ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                        ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                       ;
+;     -- USE_EAB                        ; OFF                                       ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                      ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                        ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                        ;
++---------------------------------------+-------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ultrasonic:ultrasonic_inst"                                                                   ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; distance_valid ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Fri May 22 16:56:14 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ultra_top -c ultra_top
+Info (11104): Parallel Compilation has detected 16 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 10 of the 10 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga/fpga_projrct/ultrasonic/rtl/bell/tone_index.v
+    Info (12023): Found entity 1: tone_index
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga/fpga_projrct/ultrasonic/rtl/ultrasonic/ultrasonic_div.v
+    Info (12023): Found entity 1: ultrasonic
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga/fpga_projrct/ultrasonic/rtl/ultrasonic/ultra_top.v
+    Info (12023): Found entity 1: ultra_top
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga/fpga_projrct/ultrasonic/rtl/digi_tube/tube_dive.v
+    Info (12023): Found entity 1: tube_dive
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga/fpga_projrct/ultrasonic/rtl/digi_tube/binary2bcd.v
+    Info (12023): Found entity 1: binary2bcd
+Info (12127): Elaborating entity "ultra_top" for the top level hierarchy
+Info (12128): Elaborating entity "ultrasonic" for hierarchy "ultrasonic:ultrasonic_inst"
+Warning (10230): Verilog HDL assignment warning at ultrasonic_div.v(85): truncated value with size 32 to match size of target (16)
+Info (12128): Elaborating entity "binary2bcd" for hierarchy "binary2bcd:binary2bcd_inst"
+Info (12128): Elaborating entity "tube_dive" for hierarchy "tube_dive:tube_dive_inst"
+Warning (10230): Verilog HDL assignment warning at tube_dive.v(26): truncated value with size 32 to match size of target (16)
+Info (12128): Elaborating entity "tone_index" for hierarchy "tone_index:tone_index_inst"
+Warning (10216): Verilog HDL warning at tone_index.v(39): expression attempts to divide or modulo by zero. Treated expression value as Don't Care (X) during synthesis.
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "ultrasonic:ultrasonic_inst|Mult0"
+Info (12130): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "ultrasonic:ultrasonic_inst|lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "32"
+    Info (12134): Parameter "LPM_WIDTHB" = "12"
+    Info (12134): Parameter "LPM_WIDTHP" = "44"
+    Info (12134): Parameter "LPM_WIDTHR" = "44"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[3]", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[3]|addcore:adder", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[3]|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[3]|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[3]|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[3]|altshift:carry_ext_latency_ffs", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[1]", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[1]|addcore:adder", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[1]|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|mpar_add:sub_par_add", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|mpar_add:sub_par_add|lpm_add_sub:adder[0]|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "ultrasonic:ultrasonic_inst|lpm_mult:Mult0"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "tube_seg[7]" is stuck at VCC
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 576 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 559 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4604 megabytes
+    Info: Processing ended: Fri May 22 16:56:16 2026
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

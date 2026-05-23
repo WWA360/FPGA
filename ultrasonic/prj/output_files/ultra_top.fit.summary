@@ -1,0 +1,12 @@
+Fitter Status : Successful - Fri May 22 16:56:20 2026
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : ultra_top
+Top-level Entity Name : ultra_top
+Family : Cyclone
+Device : EP1C3T144C8
+Timing Models : Final
+Total logic elements : 546 / 2,910 ( 19 % )
+Total pins : 17 / 104 ( 16 % )
+Total virtual pins : 0
+Total memory bits : 0 / 59,904 ( 0 % )
+Total PLLs : 0 / 1 ( 0 % )

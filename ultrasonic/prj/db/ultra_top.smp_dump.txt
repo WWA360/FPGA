@@ -1,0 +1,8 @@
+
+State Machine - |ultra_top|ultrasonic:ultrasonic_inst|state
+Name state.S_ECHO state.S_WAIT state.S_TRIG state.S_IDLE state.S_DONE 
+state.S_IDLE 0 0 0 0 0 
+state.S_TRIG 0 0 1 1 0 
+state.S_WAIT 0 1 0 1 0 
+state.S_ECHO 1 0 0 1 0 
+state.S_DONE 0 0 0 1 1 

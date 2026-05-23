@@ -1,0 +1,51 @@
+module ultra_top
+#(
+    parameter LED_ON =0 ;
+    parameter FRE_CLK =50 ;
+)
+(
+    input clk,
+    input rst_n,
+    input Echo,
+
+    output wire Trig,
+    output wire [3:0]tube_bit,
+    output wire [7:0]tube_seg
+);
+
+wire distance_valid;
+wire [15:0] distance;
+
+ultrasonic ultrasonic_inst
+#(
+    .FRE_CLK(FRE_CLK)
+) ultrasonic_inst
+(
+    clk             (clk)       ,
+    rst_n           (rst_n)       ,
+
+    Echo            (Echo)       ,
+    Trig            (Trig)       ,
+
+    distance        (distance)       ,
+    distance_valid  (distance_valid)
+);
+
+tube_dive 
+#(
+    .LED_ON(LED_ON)),
+    .CLK_FRE(FRE_CLK) 
+)tube_dive tube_dive_inst
+(
+    clk        (clk)        ,
+    rst_n      (rst_n)        ,
+    d0         (distace[3:0])        ,
+    d1         (distace[7:4])        ,
+    d2         (distace[11:8])        ,
+    d3         (distace[15:11])        ,
+
+    tube_bit   (tube_bit)        ,
+    tube_seg   (tube_seg)
+);
+
+endmodule
